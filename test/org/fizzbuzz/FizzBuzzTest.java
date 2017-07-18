@@ -21,8 +21,8 @@ public class FizzBuzzTest {
     public void correctFizz() {
         String expected = "fizz";
 
-        assertEquals(FizzBuzz.output(3, 3), expected);
         assertEquals(FizzBuzz.output(6, 6), expected);
+        assertEquals(FizzBuzz.output(9, 9), expected);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class FizzBuzzTest {
         String expected = "fizzbuzz";
 
         assertEquals(FizzBuzz.output(15, 15), expected);
-        assertEquals(FizzBuzz.output(30, 30), expected);
+        assertEquals(FizzBuzz.output(45, 45), expected);
     }
 
     @Test

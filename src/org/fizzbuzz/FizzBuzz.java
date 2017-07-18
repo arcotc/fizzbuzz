@@ -3,6 +3,7 @@ package org.fizzbuzz;
 public class FizzBuzz {
     private static final String FIZZ = "fizz";
     private static final String BUZZ = "buzz";
+    private static final String LUCK = "luck";
 
     public static String output(int start, int end) {
         if (start > end) {
@@ -11,7 +12,9 @@ public class FizzBuzz {
 
         StringBuilder builder = new StringBuilder();
         for (int i = start; i <= end; i++) {
-            if (isFizzBuzz(i)) {
+            if (isLuck(i)) {
+                builder.append(LUCK);
+            } else if (isFizzBuzz(i)) {
                 builder.append(FIZZ).append(BUZZ);
             } else if (isFizz(i)) {
                 builder.append(FIZZ);
@@ -37,5 +40,9 @@ public class FizzBuzz {
 
     private static boolean isFizzBuzz(int number) {
         return isFizz(number) && isBuzz(number);
+    }
+
+    private static boolean isLuck(int number) {
+        return Integer.toString(number).contains("3");
     }
 }
