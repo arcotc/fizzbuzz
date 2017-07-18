@@ -4,6 +4,12 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class FizzBuzzTest {
+    @Test(expected = IllegalArgumentException.class)
+    public void startMustBeAfterEnd() {
+        FizzBuzz.output(20,1);
+    }
+
+
     @Test
     public void correctNumber() {
         String expected = "1";
