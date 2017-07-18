@@ -6,7 +6,7 @@ import org.junit.Test;
 public class FizzBuzzTest {
     @Test(expected = IllegalArgumentException.class)
     public void startMustBeAfterEnd() {
-        FizzBuzz.output(20,1);
+        FizzBuzz.output(20,1, new ResultAndStats());
     }
 
     @Test
@@ -14,12 +14,12 @@ public class FizzBuzzTest {
         String expected = "1";
 
         ResultAndStats resultAndStats = FizzBuzz.outputWithStats(1, 1);
-        assertEquals(resultAndStats.output, expected);
-        assertEquals(resultAndStats.stats.getFizzCount(), 0);
-        assertEquals(resultAndStats.stats.getBuzzCount(), 0);
-        assertEquals(resultAndStats.stats.getFizzbBuzzCount(), 0);
-        assertEquals(resultAndStats.stats.getLuckCount(), 0);
-        assertEquals(resultAndStats.stats.getNumberCount(), 1);
+        assertEquals(expected, resultAndStats.getOutput());
+        assertEquals(0, resultAndStats.getFizzCount());
+        assertEquals(0, resultAndStats.getBuzzCount());
+        assertEquals(0, resultAndStats.getFizzBuzzCount());
+        assertEquals(0, resultAndStats.getLuckCount());
+        assertEquals(1, resultAndStats.getNumberCount());
     }
 
     @Test
@@ -27,12 +27,12 @@ public class FizzBuzzTest {
         String expected = "1 2";
 
         ResultAndStats resultAndStats = FizzBuzz.outputWithStats(1, 2);
-        assertEquals(resultAndStats.output, expected);
-        assertEquals(resultAndStats.stats.getFizzCount(), 0);
-        assertEquals(resultAndStats.stats.getBuzzCount(), 0);
-        assertEquals(resultAndStats.stats.getFizzbBuzzCount(), 0);
-        assertEquals(resultAndStats.stats.getLuckCount(), 0);
-        assertEquals(resultAndStats.stats.getNumberCount(), 2);
+        assertEquals(expected, resultAndStats.getOutput());
+        assertEquals(0, resultAndStats.getFizzCount());
+        assertEquals(0, resultAndStats.getBuzzCount());
+        assertEquals(0, resultAndStats.getFizzBuzzCount());
+        assertEquals(0, resultAndStats.getLuckCount());
+        assertEquals(2, resultAndStats.getNumberCount());
     }
 
     @Test
@@ -41,23 +41,22 @@ public class FizzBuzzTest {
 
         {
             ResultAndStats resultAndStats = FizzBuzz.outputWithStats(6, 6);
-            assertEquals(FizzBuzz.output(6, 6), expected);
-            assertEquals(resultAndStats.output, expected);
-            assertEquals(resultAndStats.stats.getFizzCount(), 1);
-            assertEquals(resultAndStats.stats.getBuzzCount(), 0);
-            assertEquals(resultAndStats.stats.getFizzbBuzzCount(), 0);
-            assertEquals(resultAndStats.stats.getLuckCount(), 0);
-            assertEquals(resultAndStats.stats.getNumberCount(), 0);
+            assertEquals(expected, resultAndStats.getOutput());
+            assertEquals(1, resultAndStats.getFizzCount());
+            assertEquals(0, resultAndStats.getBuzzCount());
+            assertEquals(0, resultAndStats.getFizzBuzzCount());
+            assertEquals(0, resultAndStats.getLuckCount());
+            assertEquals(0, resultAndStats.getNumberCount());
         }
 
         {
             ResultAndStats resultAndStats = FizzBuzz.outputWithStats(9, 9);
-            assertEquals(resultAndStats.output, expected);
-            assertEquals(resultAndStats.stats.getFizzCount(), 1);
-            assertEquals(resultAndStats.stats.getBuzzCount(), 0);
-            assertEquals(resultAndStats.stats.getFizzbBuzzCount(), 0);
-            assertEquals(resultAndStats.stats.getLuckCount(), 0);
-            assertEquals(resultAndStats.stats.getNumberCount(), 0);
+            assertEquals(expected, resultAndStats.getOutput());
+            assertEquals(1, resultAndStats.getFizzCount());
+            assertEquals(0, resultAndStats.getBuzzCount());
+            assertEquals(0, resultAndStats.getFizzBuzzCount());
+            assertEquals(0, resultAndStats.getLuckCount());
+            assertEquals(0, resultAndStats.getNumberCount());
         }
     }
 
@@ -67,22 +66,22 @@ public class FizzBuzzTest {
 
         {
             ResultAndStats resultAndStats = FizzBuzz.outputWithStats(5, 5);
-            assertEquals(resultAndStats.output, expected);
-            assertEquals(resultAndStats.stats.getFizzCount(), 0);
-            assertEquals(resultAndStats.stats.getBuzzCount(), 1);
-            assertEquals(resultAndStats.stats.getFizzbBuzzCount(), 0);
-            assertEquals(resultAndStats.stats.getLuckCount(), 0);
-            assertEquals(resultAndStats.stats.getNumberCount(), 0);
+            assertEquals(expected, resultAndStats.getOutput());
+            assertEquals(0, resultAndStats.getFizzCount());
+            assertEquals(1, resultAndStats.getBuzzCount());
+            assertEquals(0, resultAndStats.getFizzBuzzCount());
+            assertEquals(0, resultAndStats.getLuckCount());
+            assertEquals(0, resultAndStats.getNumberCount());
         }
 
         {
             ResultAndStats resultAndStats = FizzBuzz.outputWithStats(20, 20);
-            assertEquals(resultAndStats.output, expected);
-            assertEquals(resultAndStats.stats.getFizzCount(), 0);
-            assertEquals(resultAndStats.stats.getBuzzCount(), 1);
-            assertEquals(resultAndStats.stats.getFizzbBuzzCount(), 0);
-            assertEquals(resultAndStats.stats.getLuckCount(), 0);
-            assertEquals(resultAndStats.stats.getNumberCount(), 0);
+            assertEquals(expected, resultAndStats.getOutput());
+            assertEquals(0, resultAndStats.getFizzCount());
+            assertEquals(1, resultAndStats.getBuzzCount());
+            assertEquals(0, resultAndStats.getFizzBuzzCount());
+            assertEquals(0, resultAndStats.getLuckCount());
+            assertEquals(0, resultAndStats.getNumberCount());
         }
     }
 
@@ -92,22 +91,22 @@ public class FizzBuzzTest {
 
         {
             ResultAndStats resultAndStats = FizzBuzz.outputWithStats(15, 15);
-            assertEquals(resultAndStats.output, expected);
-            assertEquals(resultAndStats.stats.getFizzCount(), 0);
-            assertEquals(resultAndStats.stats.getBuzzCount(), 0);
-            assertEquals(resultAndStats.stats.getFizzbBuzzCount(), 1);
-            assertEquals(resultAndStats.stats.getLuckCount(), 0);
-            assertEquals(resultAndStats.stats.getNumberCount(), 0);
+            assertEquals(expected, resultAndStats.getOutput());
+            assertEquals(0, resultAndStats.getFizzCount());
+            assertEquals(0, resultAndStats.getBuzzCount());
+            assertEquals(1, resultAndStats.getFizzBuzzCount());
+            assertEquals(0, resultAndStats.getLuckCount());
+            assertEquals(0, resultAndStats.getNumberCount());
         }
 
         {
             ResultAndStats resultAndStats = FizzBuzz.outputWithStats(45, 45);
-            assertEquals(resultAndStats.output, expected);
-            assertEquals(resultAndStats.stats.getFizzCount(), 0);
-            assertEquals(resultAndStats.stats.getBuzzCount(), 0);
-            assertEquals(resultAndStats.stats.getFizzbBuzzCount(), 1);
-            assertEquals(resultAndStats.stats.getLuckCount(), 0);
-            assertEquals(resultAndStats.stats.getNumberCount(), 0);
+            assertEquals(expected, resultAndStats.getOutput());
+            assertEquals(0, resultAndStats.getFizzCount());
+            assertEquals(0, resultAndStats.getBuzzCount());
+            assertEquals(resultAndStats.getFizzBuzzCount(), 1);
+            assertEquals(0, resultAndStats.getLuckCount());
+            assertEquals(0, resultAndStats.getNumberCount());
         }
     }
 
@@ -116,12 +115,12 @@ public class FizzBuzzTest {
         String expected = "1 2 luck 4 buzz fizz 7 8 fizz buzz 11 fizz luck 14 fizzbuzz 16 17 fizz 19 buzz";
 
         ResultAndStats resultAndStats = FizzBuzz.outputWithStats(1, 20);
-        assertEquals(resultAndStats.output, expected);
-        assertEquals(resultAndStats.stats.getFizzCount(), 4);
-        assertEquals(resultAndStats.stats.getBuzzCount(), 3);
-        assertEquals(resultAndStats.stats.getFizzbBuzzCount(), 1);
-        assertEquals(resultAndStats.stats.getLuckCount(), 2);
-        assertEquals(resultAndStats.stats.getNumberCount(), 10);
+        assertEquals(expected, resultAndStats.getOutput());
+        assertEquals(4, resultAndStats.getFizzCount());
+        assertEquals(3, resultAndStats.getBuzzCount());
+        assertEquals(1, resultAndStats.getFizzBuzzCount());
+        assertEquals(2, resultAndStats.getLuckCount());
+        assertEquals(10, resultAndStats.getNumberCount());
     }
 
     @Test
@@ -130,22 +129,22 @@ public class FizzBuzzTest {
 
         {
             ResultAndStats resultAndStats = FizzBuzz.outputWithStats(3, 3);
-            assertEquals(resultAndStats.output, expected);
-            assertEquals(resultAndStats.stats.getFizzCount(), 0);
-            assertEquals(resultAndStats.stats.getBuzzCount(), 0);
-            assertEquals(resultAndStats.stats.getFizzbBuzzCount(), 0);
-            assertEquals(resultAndStats.stats.getLuckCount(), 1);
-            assertEquals(resultAndStats.stats.getNumberCount(), 0);
+            assertEquals(expected, resultAndStats.getOutput());
+            assertEquals(0, resultAndStats.getFizzCount());
+            assertEquals(0, resultAndStats.getBuzzCount());
+            assertEquals(0, resultAndStats.getFizzBuzzCount());
+            assertEquals(1, resultAndStats.getLuckCount());
+            assertEquals(0, resultAndStats.getNumberCount());
         }
 
         {
             ResultAndStats resultAndStats = FizzBuzz.outputWithStats(13, 13);
-            assertEquals(resultAndStats.output, expected);
-            assertEquals(resultAndStats.stats.getFizzCount(), 0);
-            assertEquals(resultAndStats.stats.getBuzzCount(), 0);
-            assertEquals(resultAndStats.stats.getFizzbBuzzCount(), 0);
-            assertEquals(resultAndStats.stats.getLuckCount(), 1);
-            assertEquals(resultAndStats.stats.getNumberCount(), 0);
+            assertEquals(expected, resultAndStats.getOutput());
+            assertEquals(resultAndStats.getFizzCount(), 0);
+            assertEquals(0, resultAndStats.getBuzzCount());
+            assertEquals(0, resultAndStats.getFizzBuzzCount());
+            assertEquals(1, resultAndStats.getLuckCount());
+            assertEquals(0, resultAndStats.getNumberCount());
         }
     }
 }
