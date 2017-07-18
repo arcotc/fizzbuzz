@@ -17,3 +17,21 @@ Enhance your existing FizzBuzz solution to perform the following:
 
 e.g. if I run the program over a range from 1-20 should get the following output
 1 2 luck 4 buzz fizz 7 8 fizz buzz 11 fizz luck 14 fizzbuzz 16 17 fizz 19 buzz
+
+Step 3:
+Enhance your exising FizzBuzz solution to also print statistics about how many times the following were output:
+
+- fizz
+- buzz
+- fizzbuzz
+- luck
+- number
+
+e.g. if I run the prograrm over a range from 1-20 I should get the following output:
+1 2 luck 4 buzz fizz 7 8 fizz buzz 11 fizz luck 14 fizzbuzz 16 17 fizz 19 buzz
+
+fizz: 4
+buzz: 3
+fizzbuzz: 1
+luck: 2
+number: 10
