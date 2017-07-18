@@ -42,9 +42,17 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void correctFizzBuzzInFirst20() {
-        String expected = "1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz 16 17 fizz 19 buzz";
+    public void correctFizzBuzzLuckInFirst20() {
+        String expected = "1 2 luck 4 buzz fizz 7 8 fizz buzz 11 fizz luck 14 fizzbuzz 16 17 fizz 19 buzz";
 
         assertEquals(FizzBuzz.output(1, 20), expected);
+    }
+
+    @Test
+    public void correctLuck() {
+        String expected = "luck";
+
+        assertEquals(FizzBuzz.output(3,3), expected);
+        assertEquals(FizzBuzz.output(13,13), expected);
     }
 }
